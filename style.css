@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+.ocultar{
+    display: none;
+}   
+
+/*Estilos para el titulo y el navbar------------------------------------------------------------------------ */
+#titulo{
+    background-color: yellow;
+    display: flex;
+    padding: 1%;
+    justify-content: space-around;
+    box-shadow: 1px 1px 10px gray;
+}
+#titulo h2 a{
+    text-shadow: 2px 0px 2px rgb(150, 0, 0), -2px 0px 2px rgb(150, 0, 0), 0px 2px 2px rgb(150, 0, 0), 0px -2px 2px rgb(150, 0, 0);
+    color: blanchedalmond;
+    text-decoration: none;
+}
+#icono{
+    color: black !important;
+    font-size: 1.3rem;
+}
+#icono:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#navbar{
+    background-color: rgb(255, 255, 78);
+    box-shadow: 0px 0px 6px black;
+    padding: 1%;
+}
+#navbar ul{
+    max-width: 400px;
+    margin: 5px auto;
+    list-style: none;
+    display: flex;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: space-around;
+}
+#navbar ul li{
+    border: 1px solid #666;
+    border-radius: 5px;
+    padding: 1%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+#navbar ul li:hover{
+    transform: scale(1.1);
+    background-color: rgb(150, 0, 0);
+    color: white;
+}
+
+
+#contenedorPrincipal{
+    max-width: 400px;
+    width: 95%;
+    margin: 5% auto;
+}
+.inicio{
+    display: flex;
+    justify-content: center;
+}
+#imgLogo{
+    /* max-width: 400px; */
+    margin: 0px auto;
+    width: 100%;
+    border-radius: 80px;
+    box-shadow: 0px 0px 10px yellow;
+}
+
+/* ESTILOS PARA LA VENTANA DE PRODUCTOS ------------------------------------------*/
+.producto{
+    /* max-width: 400px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.tarjetaProducto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px yellow;
+}
+.tarjetaProducto:hover{
+    border: 1px solid black;
+    font-size: 0.9rem;
+}
+.tarjetaProducto img{
+    width: 80%;
+    border-radius: 5px;
+    margin: 1%;
+}
+#conteo{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#conteo button{
+    border: none;
+    width: 25%;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+}
+#conteo button:hover{
+    box-shadow: 0px 0px 8px black;
+}
+
+
+/* ESTILOS PARA LA VENTANA DE CLIENTES ----------------------------------------- */
+#clientes{
+    display: flex;
+    flex-direction: column;
+    /* max-width: 400px; */
+}
+#barraClientes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+}
+.bi-person-plus{
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+.bi-person-plus:hover{
+    transform: scale(1.1);
+}
+#buscador{
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #eee;
+}
+.bi-search{
+    padding:5px ;
+}
+#buscarCliente{
+    border: none;
+    background-color: #eee;
+    padding: 5px;
+}
+#btncontinuar{
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s;
+}
+#btncontinuar:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+}
+.cliente{
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    gap: 5px;
+    border: 1px solid yellow;
+    box-shadow: 0px 0px 10px yellow;
+    border-radius: 5px;
+    margin: 5px auto;
+    padding: 5px;
+}
+.cliente:hover{
+    background-color: yellow;
+}
+.cliente p{
+    margin: auto;
+}
+#lapiz, #equis{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s;
+}
+#lapiz:hover,
+#equis:hover{
+    transform: scale(1.1);
+    background-color: black;
+    color: white;
+}
+
+/* ESTILOS PARA LA VENTANA DE LOS PEDIDOS -----------------------------------------------------------------*/
+#pedidoCliente{
+    border: 1px solid yellow;
+    box-shadow: 0px 0px 10px yellow;
+    border-radius: 5px;
+    margin: 5px auto;
+    padding: 5px;
+}
+#pedidoCliente p{
+    margin: auto;
+    text-align: center;
+}
+.listaPedido, #total{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+.listaPedido h3,
+#total{
+    background-color: black;
+    color: white;
+    padding: 2px;
+    border: 1px solid white;
+}
+#divBotonComprar{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+#pagar{
+    padding: 5px;
+    background-color: aqua;
+    margin: 5px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px black;
+    cursor: pointer;
+    transition: all .2s;
+}
+#pagar:hover{
+    box-shadow: none;
+    transform: scale(1.1);
+}
+
+/* Estilos del modal ------------------------------------------------------------------------------- */
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100vh;
+}
+.contenedorModal{
+    background-color: white;
+    width: 70%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px white;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+#recibido{
+    max-width: 100px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0px 10px;
+}
+#finalizar, #credito{
+    padding: 5px;
+    background-color: yellow;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px black;
+    cursor: pointer;
+    transition: all .2s;
+}
+#credito{
+    background-color: red;
+}
+#finalizar:hover,
+#credito:hover{
+    box-shadow: none;
+}
+
+/* ESTILOS PARA LA VENTANA DEL LISTAPEDIDOS */
+.tablaPedidos, 
+.pedidos{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 5fr 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: yellow;
+    border-bottom: 1px solid black;
+}
+.tablaPedidos{
+    background-color: rgb(134, 218, 0);
+    color: white;
+font-weight: bold;
+}
+.pedidos:hover{
+    background-color: rgb(102, 0, 0);
+    transform: scale(1.02);
+    color: white;
+}
+
+/* ESTILOS PARA EL FORMULARIO CLIENTE */
+#formularioCliente{
+    display: flex;
+    flex-direction: column;
+}
+#formularioCliente input{
+    font-size: 1.2rem;
+}
+#formularioCliente input[type="submit"]{
+    padding: 10px;
+    margin: 5px auto;
+    background-color: blue;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px black;
+}
+#formularioCliente input[type="submit"]:hover{
+    box-shadow: none;
+}
+
+
