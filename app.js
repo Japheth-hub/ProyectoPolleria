@@ -11,6 +11,9 @@
 //         // console.log(pedidos);
 //     });
 
+
+// let url = "http://localhost/Negocio/";
+let url = "http://monypolleria.rf.gd/"
 let contenedorPrincipal = document.getElementById("contenedorPrincipal");
 let btnProductos = document.getElementById("productos");
 let btnClientes = document.getElementById("clientes");
@@ -21,7 +24,7 @@ let carrito = {};
 
 // Funcion CLICK para poder mostrar el contenido de la etiqueta productos----------------------------------
 btnProductos.addEventListener("click", ()=>{
-    fetch("http://localhost/Negocio/php/consulta.php")
+    fetch(url+"php/consulta.php")
     .then((response) => response.json())
     .then((res) => {
         let clientes = res.datosClientes;
@@ -88,7 +91,7 @@ function menos(event){
 
 // Funcion CLICK para poder mostrar el contenido de la etiqueta clientes----------------------------------------
 btnClientes.addEventListener("click", ()=>{
-    fetch("http://localhost/Negocio/php/consulta.php")
+    fetch(url+"php/consulta.php")
     .then((response) => response.json())
     .then((res) => {
         let clientes = res.datosClientes;
@@ -147,7 +150,7 @@ btnClientes.addEventListener("click", ()=>{
             formularioCliente.addEventListener("submit", (e)=>{
                 e.preventDefault;
                 let datos = new FormData(formularioCliente);
-                fetch("http://localhost/negocio/php/addCliente.php", {
+                fetch(url+"php/addCliente.php", {
                     method: "POST", 
                     body: datos
                 })
@@ -192,7 +195,7 @@ btnClientes.addEventListener("click", ()=>{
 
 // Funcion CLICK para poder ver el pedido completo -----------------------------------------------------------
 btnPedido.addEventListener("click", ()=>{
-    fetch("http://localhost/Negocio/php/consulta.php")
+    fetch(url+"php/consulta.php")
     .then((response) => response.json())
     .then((res) => {
         let clientes = res.datosClientes;
@@ -309,7 +312,7 @@ btnPedido.addEventListener("click", ()=>{
                         },
                         body: JSON.stringify(datos)// Convertir los datos a formato JSON
                         };    
-                        fetch("http://localhost/negocio/php/pedidos.php", opciones)
+                        fetch(url+"php/pedidos.php", opciones)
                             .then(() => {
                                 console.log('Datos enviados exitosamente sin necesidad de respuesta.');
                                 })
@@ -317,7 +320,7 @@ btnPedido.addEventListener("click", ()=>{
                                 // Hacer algo con la respuesta del servidor
                                 console.error('Se produjo un error al enviar los datos:', error);
                                 })
-                        window.location.href = "http://localhost/negocio/";
+                        window.location.href = url;
                 });
             })
         }
@@ -341,7 +344,7 @@ btnPedido.addEventListener("click", ()=>{
                         },
                         body: JSON.stringify(datos)// Convertir los datos a formato JSON
                     };    
-                    fetch("http://localhost/negocio/php/pedidos.php", opciones)
+                    fetch(url+"php/pedidos.php", opciones)
                             .then(() => {
                                 console.log('Datos enviados exitosamente sin necesidad de respuesta.');
                                 })
@@ -349,14 +352,14 @@ btnPedido.addEventListener("click", ()=>{
                                 // Hacer algo con la respuesta del servidor
                                 console.error('Se produjo un error al enviar los datos:', error);
                                 })
-                        window.location.href = "http://localhost/negocio/";
+                        window.location.href = url;
             });
         }
     });
 });
 
 btnListaPedidos.addEventListener("click", () => {
-    fetch("http://localhost/Negocio/php/consulta.php")
+    fetch(url+"php/consulta.php")
     .then((response) => response.json())
     .then((res) => {
         let clientes = res.datosClientes;
@@ -367,6 +370,8 @@ btnListaPedidos.addEventListener("click", () => {
         // console.log(inventario);
         // console.log(productos);
         // console.log(pedidos);
+        contenedorPrincipal.className = "";
+        contenedorPrincipal.classList.add("clientes");
         contenedorPrincipal.innerHTML = `
         <div class="tablaPedidos">
             <p>Fecha</p>
